@@ -1,0 +1,27 @@
+#gems
+plugins: [jekyll-paginate]
+
+# Dependencies
+markdown:         kramdown
+highlighter:      true
+
+# Permalinks
+permalink:        pretty
+
+# Setup
+title:            Маркуша
+tagline:          'История ботана'
+description:      'Just another life story'
+url:              philatm.github.io
+
+author:
+  name:           'Mark Sugar'
+  url:            
+
+paginate:         3
+
+# Custom vars
+version:          2.0.0
+
+github:
+  repo:           https://github.com/poole/lanyon

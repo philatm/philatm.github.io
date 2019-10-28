@@ -1,0 +1,47 @@
+---
+layout: default
+---
+
+<div class="post">
+  <h1 class="post-title">{{ page.title }}</h1>
+  <span class="post-date">{{ page.date | date_to_string }}</span>
+  {{ content }}
+</div>
+<div class="pagination">
+{% for category in site.categories %}
+    {% assign catg_name = category.first %}
+    {% if catg_name == page.category %}
+        {% assign catg_posts = category.last %}
+    {% endif %}
+{% endfor %}
+{% for post in catg_posts %}
+    {% if post.title == page.title %}
+        {% unless forloop.last %}
+            {% assign next = catg_posts[forloop.index] %}
+            <a class="pagination-item older" href="{{ site.baseurl }}{{ next.url }}">&larr;{{ next.title }}</a>
+        {% endunless %}
+        {% unless forloop.first %}
+            <a class="pagination-item newer" href="{{ site.baseurl }}{{ prev.url }}">{{ prev.title }}&rarr;</a>
+        {% endunless %}
+    {% endif %}
+    {% assign prev = post %}
+{% endfor %}
+</div>
+
+{% comment %}
+<div class="related">
+  <h2>Связанные посты</h2>
+  <ul class="related-posts">
+    {% for post in site.related_posts limit:3 %}
+      <li>
+        <h3>
+          <a href="{{ post.url }}">
+            {{ post.title }}
+            <small>{{ post.date | date_to_string }}</small>
+          </a>
+        </h3>
+      </li>
+    {% endfor %}
+  </ul>
+</div>
+{% endcomment %}
