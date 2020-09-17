@@ -2,7 +2,7 @@
 layout: page
 title: Рассказ
 ---
-<div class="posts">
+<div class="posts-list">
   <ul>
   {% for post in site.categories.markstory %}
   <li>

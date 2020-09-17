@@ -1,15 +1,15 @@
-.posts ul {
+.posts-list ul {
 	list-style: none;
 	padding-left: 0;
 	padding-top: 2rem;
 }
 
-.posts ul li {
+.posts-list ul li {
 	padding-top: 0.25rem;
 	font-size: 1.25rem;
 }
 
-.posts .post-date {
+.posts-list .post-date {
 	font-size: 0.8rem;
 	font-color: #666;
 }
